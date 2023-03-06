@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/white">
+
+        <!-- Profile Heading -->
+        <TextView
+            android:id="@+id/profile_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Profile"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp"/>
+
+        <ImageView
+            android:id="@+id/avatar_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@drawable/circle"
+            android:src="@drawable/baseline_person_24"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Name Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="20dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:inputType="textPersonName"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Phone Number Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Phone Number"
+            android:layout_marginBottom="20dp"
+
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:inputType="phone"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Address Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/address_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Address"
+            android:layout_marginBottom="20dp"
+
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/address_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:inputType="textPostalAddress"
+                android:maxLines="2"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- City Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/city_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="City"
+            android:layout_marginBottom="20dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/city_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Rounded Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/proceed_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Proceed"
+            android:layout_marginTop="32dp"
+            android:padding="16dp"
+            android:backgroundTint="@color/green_secondary"
+            android:textColor="@color/white"
+            app:cornerRadius="32dp"/>
+
+    </LinearLayout>
+</ScrollView>
+

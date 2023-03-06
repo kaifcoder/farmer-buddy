@@ -20,7 +20,7 @@ public class OtpActivity extends AppCompatActivity {
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(OtpActivity.this,HomeActivity.class));
+                startActivity(new Intent(OtpActivity.this,ProfileRegistration.class));
             }
         });
 

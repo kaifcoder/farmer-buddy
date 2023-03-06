@@ -34,39 +34,56 @@
         app:cardCornerRadius="10dp"
         android:layout_marginHorizontal="10dp"
         >
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/idEdtPhoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:hint="Enter your phone"
-                android:importantForAutofill="no"
-                android:inputType="phone"
-                android:minHeight="48dp" />
-
-            <!--Button for getting OTP-->
-            <Button
-                android:id="@+id/idBtnGetOtp"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/profile_heading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp"
-                android:layout_below="@id/idEdtPhoneNumber"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:text="Enter your phone number"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"/>
+            <!-- Phone Number Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phone_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:inputType="phone"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--Button for getting OTP-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/idBtnGetOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginTop="20dp"
+
                 android:layout_marginBottom="10dp"
                 android:text="Get OTP"
-                android:textAllCaps="false" />
-        </RelativeLayout>
+                android:textAllCaps="false"
+                android:padding="16dp"
+                android:backgroundTint="@color/green_primary"
+                android:textColor="@color/white"
+                app:cornerRadius="32dp"
+                />
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
