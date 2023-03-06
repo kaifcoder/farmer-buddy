@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"/>
+
+    <item
+        android:id="@+id/crops"
+        android:title="Crops"
+        android:icon="@drawable/baseline_grass_24"
+        />
+
+    <item
+        android:id="@+id/govpolicy"
+        android:title="updates"
+        android:icon="@drawable/baseline_tips_and_updates_24" />
+    <item
+        android:id="@+id/ask"
+        android:title="Ask"
+        android:icon="@drawable/baseline_question_answer_24" />
+
+</menu>

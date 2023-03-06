@@ -59,14 +59,15 @@
             app:lineColor="@color/purple_200"
             app:lineWidth="2dp"
             app:viewType="rectangle" />
+
         <Button
+            android:id="@+id/verify"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:backgroundTint="#8BC34A"
             android:text="verify code"
-            android:textStyle="bold"
             android:textColor="#000000"
-             />
+            android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>
