@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".ui.CropsFragment">
+    tools:context=".adminActivities.ShowCrops">
 
     <TextView
         android:layout_width="match_parent"

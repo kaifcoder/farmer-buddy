@@ -12,10 +12,10 @@ import com.example.farmerbuddy.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Query#newInstance} factory method to
+ * Use the {@link Fertilizer#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Query extends Fragment {
+public class Fertilizer extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Query extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Query() {
+    public Fertilizer() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class Query extends Fragment {
      * @return A new instance of fragment Query.
      */
     // TODO: Rename and change types and number of parameters
-    public static Query newInstance(String param1, String param2) {
-        Query fragment = new Query();
+    public static Fertilizer newInstance(String param1, String param2) {
+        Fertilizer fragment = new Fertilizer();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

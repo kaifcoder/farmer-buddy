@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "898196810196",
+    "project_id": "farmer-buddy-fca75",
+    "storage_bucket": "farmer-buddy-fca75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898196810196:android:1511d79b5ed3b5ad0f8e41",
+        "android_client_info": {
+          "package_name": "com.example.farmerbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898196810196-0rs7v627ldfk1vuo76h3o9hql57mi6fj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQjryPw0UmruM7SYVQpb-OvHg-XaOj8Bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898196810196-0rs7v627ldfk1vuo76h3o9hql57mi6fj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

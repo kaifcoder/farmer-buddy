@@ -21,7 +21,7 @@ import com.example.farmerbuddy.ui.CropsFragment;
 import com.example.farmerbuddy.ui.HomeFragment;
 import com.example.farmerbuddy.ui.NewsUpdates;
 import com.example.farmerbuddy.ui.ProfileFragment;
-import com.example.farmerbuddy.ui.Query;
+import com.example.farmerbuddy.ui.Fertilizer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     replaceFragment(new NewsUpdates());
                     break;
                 case R.id.ask:
-                    replaceFragment(new Query());
+                    replaceFragment(new Fertilizer());
                     break;
             }
 
@@ -90,7 +90,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_home:
                 replaceFragment(new HomeFragment());
-
                 break;
             case R.id.nav_profile:
                 replaceFragment(new ProfileFragment());

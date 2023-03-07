@@ -15,6 +15,15 @@
         android:theme="@style/Theme.FarmerBuddy"
         tools:targetApi="31">
         <activity
+            android:name=".AddGovPolicy"
+            android:exported="false" />
+        <activity
+            android:name=".ShowCrops"
+            android:exported="false" />
+        <activity
+            android:name=".AddCrops"
+            android:exported="false" />
+        <activity
             android:name=".ProfileRegistration"
             android:exported="false" />
         <activity

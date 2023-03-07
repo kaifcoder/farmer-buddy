@@ -18,7 +18,7 @@
         android:icon="@drawable/baseline_tips_and_updates_24" />
     <item
         android:id="@+id/ask"
-        android:title="Ask"
-        android:icon="@drawable/baseline_question_answer_24" />
+        android:title="Fertilizer"
+        android:icon="@drawable/baseline_agriculture_24" />
 
 </menu>

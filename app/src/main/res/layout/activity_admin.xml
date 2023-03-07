@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:isScrollContainer="true"
+    android:background="@drawable/bg"
     tools:context=".AdminActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello, Admin"
+        style="@style/TextAppearance.Material3.HeadlineLarge"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="16dp"
+
+        />
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/add_crop_btn"
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
@@ -18,14 +30,16 @@
         app:cardCornerRadius="10dp"
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello Admin"
-            android:paddingVertical="10dp"
+            android:text="Add New Crop"
+            android:paddingVertical="16dp"
             android:paddingHorizontal="40dp"
+            style="@style/TextAppearance.Material3.LabelLarge"
             />
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
+        android:id="@+id/show_crop_btn"
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
@@ -33,14 +47,16 @@
         app:cardCornerRadius="10dp"
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello Admin"
-            android:paddingVertical="10dp"
+            android:text="Show All Crop"
+            android:paddingVertical="16dp"
             android:paddingHorizontal="40dp"
+            style="@style/TextAppearance.Material3.LabelLarge"
             />
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
+        android:id="@+id/provide_govpolicy"
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
@@ -48,12 +64,28 @@
         app:cardCornerRadius="10dp"
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello Admin"
-            android:paddingVertical="10dp"
+            android:text="Provide updates of gov. policies"
+            android:paddingVertical="16dp"
             android:paddingHorizontal="40dp"
+            style="@style/TextAppearance.Material3.LabelLarge"
             />
     </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/admin_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="Log Out"
+        android:textAllCaps="false"
+        android:padding="8dp"
+        android:backgroundTint="#F42E20"
+        android:textColor="@color/white"
+        app:cornerRadius="32dp"
+        />
 
 </LinearLayout>
