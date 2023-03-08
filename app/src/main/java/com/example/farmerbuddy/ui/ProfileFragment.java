@@ -1,14 +1,30 @@
 package com.example.farmerbuddy.ui;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.farmerbuddy.MainActivity;
 import com.example.farmerbuddy.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +77,23 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        MaterialButton deleteacc = view.findViewById(R.id.deleteAcc);
+        deleteacc.setOnClickListener(v -> {
+            Toast.makeText(getContext(),"account deleted", Toast.LENGTH_SHORT).show();
+            SharedPreferences sharedPreferences = getContext().getSharedPreferences("mySharedPreferences", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isUserLoggedIn", false);
+            editor.putBoolean("isAdmin",false);
+            editor.apply();
+            Intent loginIntent = new Intent(getContext(), MainActivity.class);
+            loginIntent.setFlags(
+                    Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
+            );
+            startActivity(loginIntent);
+        });
+        return view;
     }
+
+
 }

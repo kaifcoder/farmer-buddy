@@ -86,12 +86,12 @@
         android:textColor="@color/black" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/idBtnGetOtp"
+            android:id="@+id/deleteAcc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="70dp"
             android:layout_marginTop="20dp"
-
+            android:onClick="DeleteAccount"
             android:layout_marginBottom="10dp"
             android:text="Delete Account"
             android:textAllCaps="false"

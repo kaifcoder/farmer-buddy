@@ -1,19 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".ui.Fertilizer">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fertilizer Calculator"
-        android:gravity="center"
-        android:textSize="30sp"
+        android:layout_height="wrap_content"
+        android:text="Calculate amount of fertilizer"
+        style="@style/TextAppearance.Material3.HeadlineSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="16dp"
         />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/crop_search_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the crop name"
+        android:layout_margin="8dp"
+        app:hintTextColor="@color/black">
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/crop_search_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:inputType="text"
+        android:maxLines="1"
+        
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/searchcropbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Get OTP"
+        android:textAllCaps="false"
+        android:padding="16dp"
+        android:backgroundTint="@color/green_primary"
+        android:textColor="@color/white"
+        app:cornerRadius="24dp"
+        />
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        app:cardCornerRadius="8dp"
+        android:elevation="8dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N ->"
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
+
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N (Nitrogen)"
+                    android:layout_marginLeft="16dp"
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P ->"
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
+
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="180-90 kg/hac"
+                    android:layout_marginLeft="16dp"
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="K -> "
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
+
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="90-180 kg/ha"
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:layout_marginLeft="16dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

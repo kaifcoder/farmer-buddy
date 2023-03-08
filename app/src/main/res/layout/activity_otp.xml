@@ -13,7 +13,6 @@
         android:layout_marginTop="40dp"
         android:padding="30dp">
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,20 +36,20 @@
             android:textSize="24sp" />
 
         <com.chaos.view.PinView
-            android:id="@+id/firstPinView"
+            android:id="@+id/pinView"
             style="@style/PinWidget.PinView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:cursorVisible="true"
             android:hint=""
             android:inputType="number"
-            android:padding="15dp"
+            android:padding="16dp"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:cursorColor="@color/purple_500"
             app:cursorWidth="2dp"
-            app:hideLineWhenFilled="true"
+            app:hideLineWhenFilled="false"
             app:itemCount="6"
             app:itemHeight="48dp"
             app:itemRadius="5dp"
@@ -67,6 +66,7 @@
             android:layout_marginTop="30dp"
             android:backgroundTint="#8BC34A"
             android:text="verify code"
+            android:onClick="callNextScreen"
             android:textColor="#000000"
             android:textStyle="bold" />
     </LinearLayout>

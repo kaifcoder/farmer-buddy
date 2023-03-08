@@ -28,6 +28,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
+        android:onClick="AddCrop"
         >
         <TextView
             android:layout_width="match_parent"
@@ -45,6 +46,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
+        android:onClick="ShowCrops"
         >
         <TextView
             android:layout_width="match_parent"
@@ -62,11 +64,31 @@
         android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
+        android:onClick="AddGovPolicies"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Provide updates of gov. policies"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="40dp"
+            style="@style/TextAppearance.Material3.LabelLarge"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view_govpolicy"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:onClick="ShowPolicies"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View available gov. policies"
             android:paddingVertical="16dp"
             android:paddingHorizontal="40dp"
             style="@style/TextAppearance.Material3.LabelLarge"
@@ -81,6 +103,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:text="Log Out"
+        android:onClick="logOutAdmin"
         android:textAllCaps="false"
         android:padding="8dp"
         android:backgroundTint="#F42E20"
