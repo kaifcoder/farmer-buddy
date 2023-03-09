@@ -1,5 +1,6 @@
 package com.example.farmerbuddy.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.Toast;
 
+import com.example.farmerbuddy.CropDetailsActivity;
 import com.example.farmerbuddy.R;
+import com.example.farmerbuddy.SuggestionGridAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,8 +23,7 @@ import com.example.farmerbuddy.R;
  */
 public class CropsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -30,15 +35,6 @@ public class CropsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CropsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static CropsFragment newInstance(String param1, String param2) {
         CropsFragment fragment = new CropsFragment();
         Bundle args = new Bundle();
@@ -61,6 +57,16 @@ public class CropsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_crops, container, false);
+        String[] crop_name = {"mango","tomato","potato","guava","rice"};
+        int[] crop_image= {R.drawable.bg,R.drawable.bg,R.drawable.bg,R.drawable.bg,R.drawable.bg};
+        View view = inflater.inflate(R.layout.fragment_crops, container, false);
+        GridView grid = view.findViewById(R.id.allcrops_grid);
+        grid.setAdapter(new SuggestionGridAdapter(getContext(),crop_name,crop_image));
+        grid.setOnItemClickListener((parent, view1, position, id) -> {
+            Toast.makeText(getContext(), "You Clicked at " +crop_name[+ position], Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity(), CropDetailsActivity.class).putExtra("crop_name",crop_name[+position]);
+            startActivity(intent);
+        });
+        return view;
     }
 }

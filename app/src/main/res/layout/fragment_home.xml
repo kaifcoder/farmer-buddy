@@ -85,9 +85,11 @@
         />
     <!-- Recycler view for crop cards -->
     <GridView
-        android:layout_margin="8dp"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/suggestion_grid"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
         android:numColumns="2"/>
 </LinearLayout>

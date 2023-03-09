@@ -8,21 +8,20 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SuggestionGridAdapter extends BaseAdapter {
+public class GovPolicyAdapter extends BaseAdapter {
     Context context;
-    String[] cropName;
-    int[] image;
+    String[] _title;
+    String[] _link;
 
-    public SuggestionGridAdapter(Context context, String[] cropName, int[] image) {
+    public GovPolicyAdapter(Context context, String[] title, String[] link) {
         this.context = context;
-        this.cropName = cropName;
-        this.image = image;
+        this._title = title;
+        this._link = link;
     }
-
 
     @Override
     public int getCount() {
-        return cropName.length;
+        return _title.length;
     }
 
     @Override
@@ -38,11 +37,11 @@ public class SuggestionGridAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.grid_item,null);
-        ImageView img = view.findViewById(R.id.crop_image);
-        TextView name = view.findViewById(R.id.crop_name);
-        img.setImageResource(image[position]);
-        name.setText(cropName[position]);
+        View view = layoutInflater.inflate(R.layout.gov_policy_item,null);
+        TextView title = view.findViewById(R.id.policy_title);
+        TextView link = view.findViewById(R.id.policy_link);
+        title.setText(_title[position]);
+        link.setText(_link[position]);
         return view;
     }
 }

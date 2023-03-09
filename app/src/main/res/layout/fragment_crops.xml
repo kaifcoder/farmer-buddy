@@ -22,6 +22,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="8dp"
-        android:numColumns="2" />
+        android:verticalSpacing="16dp"
+        android:horizontalSpacing="16dp"
+        android:numColumns="2"
+        android:clipToPadding="false"/>
 
 </LinearLayout>
