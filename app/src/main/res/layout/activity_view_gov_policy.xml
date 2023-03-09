@@ -17,8 +17,8 @@
         android:padding="16dp"
         />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/gov_policy_recycler_view"
+    <ListView
+        android:id="@+id/gov_policy_list_view_admin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

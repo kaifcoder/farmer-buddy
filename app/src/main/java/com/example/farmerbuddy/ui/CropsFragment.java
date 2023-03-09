@@ -16,11 +16,7 @@ import com.example.farmerbuddy.CropDetailsActivity;
 import com.example.farmerbuddy.R;
 import com.example.farmerbuddy.SuggestionGridAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CropsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CropsFragment extends Fragment {
 
 

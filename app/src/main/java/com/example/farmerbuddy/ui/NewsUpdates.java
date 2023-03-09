@@ -1,5 +1,7 @@
 package com.example.farmerbuddy.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,15 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.farmerbuddy.GovPolicyAdapter;
 import com.example.farmerbuddy.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link NewsUpdates#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class NewsUpdates extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
@@ -54,26 +54,19 @@ public class NewsUpdates extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         String[] Title = {"title 1","title 2"};
-        String[] Link = {"link 1", "link 2"};
+        String[] Link = {"www.google.com", "www.youtube.com"};
         View view = inflater.inflate(R.layout.fragment_news_updates, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.gov_policy_recycler_view);
-        recyclerView.setAdapter(new RecyclerView.Adapter() {
-            @NonNull
-            @Override
-            public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return null;
-            }
-
-            @Override
-            public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-            }
-
-            @Override
-            public int getItemCount() {
-                return 0;
-            }
+        ListView listView = view.findViewById(R.id.gov_policy_list_view);
+        listView.setAdapter(new GovPolicyAdapter(getContext(),Title,Link));
+        listView.setOnItemClickListener((parent, view1, position, id) -> {
+            Toast.makeText(getContext(), "clicked"+Link[+position], Toast.LENGTH_SHORT).show();
+            String url = "http://"+Link[+position];
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
         });
         return view;
     }
+
+
 }

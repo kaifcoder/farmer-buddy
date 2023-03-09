@@ -18,10 +18,12 @@
 
 
     <GridView
-        android:id="@+id/allcrops_grid"
+        android:id="@+id/allcrops_grid_admin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="8dp"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
         android:numColumns="2" />
 
 </LinearLayout>
