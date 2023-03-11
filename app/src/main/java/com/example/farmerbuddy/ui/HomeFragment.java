@@ -108,7 +108,7 @@ public class HomeFragment extends Fragment {
             }
         });
         RequestQueue requestQueue;
-        String API_KEY = "79e79e1926a54be782b145721230903";
+        String API_KEY = "INSERT YOUR WEATHER API KEY HERE";
         String city_new = citytv.getText().toString().toLowerCase();
         String API_URL = "https://api.weatherapi.com/v1/current.json?key=" + API_KEY + "&q="+city_new;
 
