@@ -7,10 +7,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.farmerbuddy.adminActivities.AddCrops;
-import com.example.farmerbuddy.adminActivities.AddGovPolicy;
-import com.example.farmerbuddy.adminActivities.ShowCrops;
-import com.example.farmerbuddy.adminActivities.ViewGovPolicy;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminActivity extends AppCompatActivity {

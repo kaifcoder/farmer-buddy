@@ -8,20 +8,21 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class GovPolicyAdapter extends BaseAdapter {
     Context context;
-    String[] _title;
-    String[] _link;
 
-    public GovPolicyAdapter(Context context, String[] title, String[] link) {
+    List<GovPolicy> govPolicyList;
+
+    public GovPolicyAdapter(Context context, List<GovPolicy> govPolicyList) {
         this.context = context;
-        this._title = title;
-        this._link = link;
+        this.govPolicyList = govPolicyList;
     }
 
     @Override
     public int getCount() {
-        return _title.length;
+        return govPolicyList.size();
     }
 
     @Override
@@ -31,7 +32,7 @@ public class GovPolicyAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -40,8 +41,9 @@ public class GovPolicyAdapter extends BaseAdapter {
         View view = layoutInflater.inflate(R.layout.gov_policy_item,null);
         TextView title = view.findViewById(R.id.policy_title);
         TextView link = view.findViewById(R.id.policy_link);
-        title.setText(_title[position]);
-        link.setText(_link[position]);
+        GovPolicy govPolicy = govPolicyList.get(position);
+        title.setText(govPolicy.getTitle());
+        link.setText(govPolicy.getLink());
         return view;
     }
 }

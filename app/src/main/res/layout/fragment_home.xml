@@ -58,8 +58,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="vertical"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.935"
@@ -83,9 +82,11 @@
 
                 <TextView
                     android:id="@+id/weather_description"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sunny"
+                    android:maxWidth="100dp"
+                    android:maxLines="3"
+                    android:text="Loading..."
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

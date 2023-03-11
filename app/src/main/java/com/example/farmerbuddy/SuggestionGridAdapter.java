@@ -8,31 +8,32 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
 public class SuggestionGridAdapter extends BaseAdapter {
     Context context;
-    String[] cropName;
-    int[] image;
+    ArrayList<Crops> cropsList;
 
-    public SuggestionGridAdapter(Context context, String[] cropName, int[] image) {
+    public SuggestionGridAdapter(Context context, ArrayList<Crops> cropsList) {
         this.context = context;
-        this.cropName = cropName;
-        this.image = image;
+        this.cropsList = cropsList;
     }
-
 
     @Override
     public int getCount() {
-        return cropName.length;
+        return cropsList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return cropsList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -41,8 +42,9 @@ public class SuggestionGridAdapter extends BaseAdapter {
         View view = layoutInflater.inflate(R.layout.grid_item,null);
         ImageView img = view.findViewById(R.id.crop_image);
         TextView name = view.findViewById(R.id.crop_name);
-        img.setImageResource(image[position]);
-        name.setText(cropName[position]);
+        Crops crop = cropsList.get(position);
+        Picasso.get().load(crop.getImage()).into(img);
+        name.setText(crop.getCrop_name());
         return view;
     }
 }

@@ -15,8 +15,18 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.farmerbuddy.GovPolicy;
 import com.example.farmerbuddy.GovPolicyAdapter;
 import com.example.farmerbuddy.R;
+import com.example.farmerbuddy.ViewGovPolicy;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class NewsUpdates extends Fragment {
 
@@ -53,14 +63,31 @@ public class NewsUpdates extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        String[] Title = {"title 1","title 2"};
-        String[] Link = {"www.google.com", "www.youtube.com"};
         View view = inflater.inflate(R.layout.fragment_news_updates, container, false);
         ListView listView = view.findViewById(R.id.gov_policy_list_view);
-        listView.setAdapter(new GovPolicyAdapter(getContext(),Title,Link));
+
+        List<GovPolicy> govPolicyList = new ArrayList<>();
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Government Policies");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    GovPolicy govPolicy = snapshot.getValue(GovPolicy.class);
+                    govPolicyList.add(govPolicy);
+                }
+                listView.setAdapter(new GovPolicyAdapter(getContext(), govPolicyList));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getContext(), "Failed to fetch data", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         listView.setOnItemClickListener((parent, view1, position, id) -> {
-            Toast.makeText(getContext(), "clicked"+Link[+position], Toast.LENGTH_SHORT).show();
-            String url = "http://"+Link[+position];
+            Toast.makeText(getContext(), "clicked"+govPolicyList.get(position).getLink(), Toast.LENGTH_SHORT).show();
+            String url = govPolicyList.get(position).getLink();
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);

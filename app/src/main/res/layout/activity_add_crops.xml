@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".adminActivities.AddCrops"
+    tools:context=".AddCrops"
     >
 
     <LinearLayout
@@ -55,17 +55,21 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_marginTop="16dp"/>
 
-        <ImageView
-            android:id="@+id/imageview"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/placeholder"
-            android:background="#AEACAC"
-            android:contentDescription="Crop Image"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="true"
+            android:hint="Enter Image Url"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/crop_img_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <!-- N, P, K fields -->
@@ -107,8 +111,7 @@
                     android:id="@+id/p_edittext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-
+                    android:inputType="text"
                     android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -124,8 +127,7 @@
                     android:id="@+id/k_edittext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:inputType="numberDecimal"
+                    android:inputType="text"
                     android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -178,7 +180,7 @@
                 android:id="@+id/humidity_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
+                android:inputType="text"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -204,7 +206,6 @@
                 android:id="@+id/rainfall_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -213,7 +214,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="pH"
+            android:text="soil type"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_marginTop="16dp"/>
 
@@ -221,28 +222,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hintEnabled="true"
-            android:hint="Enter pH"
+            android:hint="Enter soil type"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ph_edittext"
+                android:id="@+id/soiltype_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
+                android:inputType="text"
                 android:maxLines="1"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/idBtnGetOtp"
+            android:id="@+id/add_crop_btn_admin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="70dp"
             android:layout_marginTop="20dp"
-
             android:layout_marginBottom="10dp"
             android:text="Add Crop"
             android:textAllCaps="false"

@@ -14,15 +14,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.farmerbuddy.HomeActivity;
 import com.example.farmerbuddy.MainActivity;
+import com.example.farmerbuddy.ProfileRegistration;
 import com.example.farmerbuddy.R;
+import com.example.farmerbuddy.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.Objects;
 
@@ -79,12 +92,44 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         MaterialButton deleteacc = view.findViewById(R.id.deleteAcc);
+        TextView nametv,addtv,contacttv;
+        nametv =view.findViewById(R.id.name_value);
+        addtv = view.findViewById(R.id.address_value);
+        contacttv = view.findViewById(R.id.contact_info_value);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("mySharedPreferences",MODE_PRIVATE);
+        String phone_number = sharedPreferences.getString("phone_number",null);
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance("https://farmer-buddy-fca75-default-rtdb.asia-southeast1.firebasedatabase.app")
+                .getReference("users/"+phone_number);
+
+        databaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user = snapshot.getValue(User.class);
+                assert user != null;
+                nametv.setText(user.getName());
+                addtv.setText(user.getAddress());
+                contacttv.setText(user.getPhone_number());
+//                JSONObject currentObj = snapshot.getChildren()
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                
+            }
+        });
         deleteacc.setOnClickListener(v -> {
+            databaseRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(getContext(), "profile deleted from database", Toast.LENGTH_SHORT).show();
+                }
+            });
             Toast.makeText(getContext(),"account deleted", Toast.LENGTH_SHORT).show();
-            SharedPreferences sharedPreferences = getContext().getSharedPreferences("mySharedPreferences", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("isUserLoggedIn", false);
             editor.putBoolean("isAdmin",false);
+            editor.putString("phone_number",null);
+            editor.putString("phoneNo",null);
             editor.apply();
             Intent loginIntent = new Intent(getContext(), MainActivity.class);
             loginIntent.setFlags(

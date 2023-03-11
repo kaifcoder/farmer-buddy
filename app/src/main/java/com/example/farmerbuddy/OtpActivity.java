@@ -119,7 +119,7 @@ public class OtpActivity extends AppCompatActivity {
                                 editor.putBoolean("isUserLoggedIn", true);
                                 editor.putBoolean("isAdmin",false);
                                 editor.apply();
-                                Intent intent = new Intent(this,HomeActivity.class)
+                                Intent intent = new Intent(this,ProfileRegistration.class)
                                     .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK)
                                     .putExtra("phoneNo",phoneNo);
                             startActivity(intent);

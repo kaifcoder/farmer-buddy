@@ -5,7 +5,9 @@ public class User {
     String phone_number;
     String address;
     String city;
-
+    public User() {
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
     public User(String name, String phone_number, String address, String city) {
         this.name = name;
         this.phone_number = phone_number;
