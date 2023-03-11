@@ -109,7 +109,6 @@ public class ProfileFragment extends Fragment {
                 nametv.setText(user.getName());
                 addtv.setText(user.getAddress());
                 contacttv.setText(user.getPhone_number());
-//                JSONObject currentObj = snapshot.getChildren()
             }
 
             @Override
@@ -118,12 +117,7 @@ public class ProfileFragment extends Fragment {
             }
         });
         deleteacc.setOnClickListener(v -> {
-            databaseRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    Toast.makeText(getContext(), "profile deleted from database", Toast.LENGTH_SHORT).show();
-                }
-            });
+            databaseRef.removeValue().addOnCompleteListener(task -> Toast.makeText(getContext(), "profile deleted from database", Toast.LENGTH_SHORT).show());
             Toast.makeText(getContext(),"account deleted", Toast.LENGTH_SHORT).show();
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("isUserLoggedIn", false);

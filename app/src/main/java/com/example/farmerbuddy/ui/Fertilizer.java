@@ -2,43 +2,42 @@ package com.example.farmerbuddy.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.farmerbuddy.Crops;
 import com.example.farmerbuddy.R;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fertilizer#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Fertilizer extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    TextInputEditText searchCrop;
+    MaterialButton searchbtn;
+    TextView nitrogenTv, potassiumTv, phosphorustv;
+    CardView fertilizerCard;
 
     public Fertilizer() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Query.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Fertilizer newInstance(String param1, String param2) {
         Fertilizer fragment = new Fertilizer();
         Bundle args = new Bundle();
@@ -61,6 +60,33 @@ public class Fertilizer extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_query, container, false);
+        View view = inflater.inflate(R.layout.fragment_query, container, false);
+        searchCrop = view.findViewById(R.id.crop_search_edt);
+        searchbtn = view.findViewById(R.id.searchcropbtn);
+        fertilizerCard = view.findViewById(R.id.fertilizerCard);
+        nitrogenTv = view.findViewById(R.id.nitrogenTV);
+        potassiumTv = view.findViewById(R.id.potassiumTv);
+        phosphorustv = view.findViewById(R.id.phosphorusTv);
+
+        searchbtn.setOnClickListener(v -> {
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("crops/"+searchCrop.getText().toString().trim().toLowerCase());
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    Crops crops = snapshot.getValue(Crops.class);
+                    fertilizerCard.setVisibility(View.VISIBLE);
+                    nitrogenTv.setText(crops.getN()+ " Kg/Ha");
+                    phosphorustv.setText(crops.getP()+ " Kg/Ha");
+                    potassiumTv.setText(crops.getK()+ " Kg/Ha");
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        });
+
+        return view;
     }
 }

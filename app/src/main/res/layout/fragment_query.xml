@@ -33,7 +33,6 @@
         android:textColor="@color/black"
         android:inputType="text"
         android:maxLines="1"
-        
         />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,88 +42,100 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:text="Get OTP"
+        android:text="Search"
         android:textAllCaps="false"
         android:padding="16dp"
         android:backgroundTint="@color/green_primary"
         android:textColor="@color/white"
         app:cornerRadius="24dp"
         />
-    
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/fertilizerCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:gravity="center"
-        app:cardCornerRadius="8dp"
         android:elevation="8dp"
-        >
+        android:gravity="center"
+        android:visibility="gone"
+        app:cardCornerRadius="8dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="8dp">
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
                 <TextView
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="N ->"
-                    style="@style/TextAppearance.Material3.HeadlineSmall"
 
 
                     />
+
                 <TextView
+                    android:id="@+id/nitrogenTV"
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="N (Nitrogen)"
                     android:layout_marginLeft="16dp"
-                    style="@style/TextAppearance.Material3.HeadlineSmall"
-                    />
+                    android:text="..." />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="8dp">
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
                 <TextView
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="P ->"
-                    style="@style/TextAppearance.Material3.HeadlineSmall"
 
 
                     />
+
                 <TextView
+                    android:id="@+id/phosphorusTv"
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="180-90 kg/hac"
                     android:layout_marginLeft="16dp"
-                    style="@style/TextAppearance.Material3.HeadlineSmall"
-                    />
+                    android:text="..." />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="8dp">
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
                 <TextView
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="K -> "
-                    style="@style/TextAppearance.Material3.HeadlineSmall"
 
 
                     />
+
                 <TextView
+                    android:id="@+id/potassiumTv"
+                    style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="90-180 kg/ha"
-                    style="@style/TextAppearance.Material3.HeadlineSmall"
                     android:layout_marginLeft="16dp"
-                    />
+                    android:text="..." />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

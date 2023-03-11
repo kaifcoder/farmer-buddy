@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.043" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/cropImageView"
         android:layout_width="204dp"
         android:layout_height="189dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,6 +59,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/cropNameTV"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -84,6 +85,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/soilTypeTV"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -109,6 +111,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tempTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -124,6 +127,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -134,6 +138,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/humidityTV"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -159,6 +164,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/rainfallTV"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -184,6 +190,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/Ntv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -209,6 +216,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/Ktv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -234,6 +242,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/Ptv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
