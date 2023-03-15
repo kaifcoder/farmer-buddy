@@ -76,7 +76,6 @@ TextInputEditText name,phone_no,add,city;
             editor.putBoolean("haveProfile",true);
             editor.putString("phoneNo",phone_no.getText().toString());
             editor.apply();
-            
             Intent i = new Intent(ProfileRegistration.this,HomeActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);

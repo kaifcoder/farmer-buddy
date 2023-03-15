@@ -23,6 +23,7 @@ import com.example.farmerbuddy.ui.HomeFragment;
 import com.example.farmerbuddy.ui.NewsUpdates;
 import com.example.farmerbuddy.ui.ProfileFragment;
 import com.example.farmerbuddy.ui.Fertilizer;
+import com.example.farmerbuddy.ui.queries;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.FirebaseApp;
@@ -132,6 +133,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     break;
                 case R.id.ask:
                     replaceFragment(new Fertilizer());
+                    break;
+                case R.id.queries:
+                    replaceFragment(new queries());
                     break;
             }
 

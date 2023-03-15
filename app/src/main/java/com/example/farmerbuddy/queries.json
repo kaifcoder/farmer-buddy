@@ -1,0 +1,88 @@
+{
+  "questions": [
+    {
+      "question": "What is the best time to plant corn?",
+      "answer": "Corn should be planted in the spring after the last frost date for your area."
+    },
+    {
+      "question": "How often should I water my tomato plants?",
+      "answer": "Tomato plants should be watered deeply once a week, or more often if the soil is dry."
+    },
+    {
+      "question": "How can I protect my crops from pests?",
+      "answer": "You can use natural methods like crop rotation, companion planting, and insect-repelling plants, or use pesticides if necessary."
+    },
+    {
+      "question": "What is the best fertilizer for my garden?",
+      "answer": "It depends on the type of plants you're growing and the nutrient needs of your soil. A soil test can help determine what nutrients your soil needs."
+    },
+    {
+      "question": "How can I prevent soil erosion on my farm?",
+      "answer": "You can plant cover crops, use conservation tillage practices, and avoid overgrazing."
+    },
+    {
+      "question": "What is the best way to store harvested vegetables?",
+      "answer": "Most vegetables should be stored in a cool, dark, and dry place like a root cellar or pantry."
+    },
+    {
+      "question": "How can I tell if my soil is healthy?",
+      "answer": "Healthy soil should have a rich, dark color, be crumbly and easy to work, and have a pleasant earthy smell. A soil test can also help determine its nutrient content."
+    },
+    {
+      "question": "How can I control weeds in my garden?",
+      "answer": "You can pull weeds by hand, use mulch to suppress weed growth, or use herbicides if necessary."
+    },
+    {
+      "question": "What is the best way to harvest fruit from a tree?",
+      "answer": "Fruit should be harvested when it is fully ripe and has a firm texture. Use a ladder if necessary and be careful not to damage the tree or fruit."
+    },
+    {
+      "question": "How can I improve the quality of my soil?",
+      "answer": "You can add compost, manure, or other organic matter to improve soil fertility and structure."
+    },
+    {
+      "question": "What is the best way to irrigate my crops?",
+      "answer": "It depends on the type of crop and the soil conditions, but common methods include drip irrigation, sprinkler irrigation, and flood irrigation."
+    },
+    {
+      "question": "How can I protect my crops from extreme weather?",
+      "answer": "You can use protective covers like row covers or hoop houses, or plant crops that are adapted to your climate and weather patterns."
+    },
+    {
+      "question": "How can I prevent soil compaction?",
+      "answer": "Avoid walking or driving on soil that is wet or has a high clay content. Use raised beds or pathways to reduce foot traffic in the garden."
+    },
+    {
+      "question": "What is the best way to prune fruit trees?",
+      "answer": "Fruit trees should be pruned in the winter when they are dormant. Remove dead or diseased branches, and shape the tree to promote healthy growth and fruit production."
+    },
+    {
+      "question": "How can I attract pollinators to my garden?",
+      "answer": "Plant flowers that attract bees, butterflies, and other pollinators. Provide a source of water for them to drink, and avoid using pesticides that can harm them."
+    },
+    {
+      "question": "How can I prevent my crops from getting diseases?",
+      "answer": "Use disease-resistant varieties of plants, practice good sanitation by removing infected plant debris, and avoid overcrowding plants."
+    },
+    {
+      "question": "What is the best way to harvest and store seeds from my plants?",
+      "answer": "Allow the seed pods to dry on the plant, then harvest and store them in a cool, dry place in a labeled container."
+    },
+    {
+      "question": "How can I prevent nutrient deficiencies in my plants?",
+      "answer": "Make sure the soil has adequate levels of all necessary nutrients, and use fertilizers or amendments as needed."
+    },
+    {
+      "question": "How can I prevent erosion in a hilly area?",
+      "answer": "Plant cover crops, use terracing to create level areas for planting, and avoid tilling or disturbing the soil on steep slopes."
+    },
+    {
+      "question": "How can I manage pests without using harmful chemicals?",
+      "answer": "Use natural methods like beneficial insects, sticky traps, and physical barriers like netting or row covers."
+    },
+    {
+      "question": "What is the best way to rotate crops?",
+      "answer": "Rotate crops by planting different plant families in different areas of the garden each year. This can help prevent soil-borne diseases and nutrient depletion."
+    }
+  ]
+}

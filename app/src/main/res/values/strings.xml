@@ -8,4 +8,7 @@
     <string name="Name">Name</string>
     <string name="Phone">Phone</string>
     <string name="Address">Address</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="get_otp">Get OTP</string>
 </resources>

@@ -12,8 +12,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Farmer buddy"
-
+        android:text="@string/app_name"
         android:layout_above="@id/card"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
@@ -26,7 +25,6 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
@@ -43,7 +41,7 @@
                 android:id="@+id/profile_heading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter your phone number"
+                android:text="@string/enter_your_phone_number"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -55,7 +53,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone Number"
+                android:hint="@string/phone_number"
                 app:hintTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -75,7 +73,7 @@
                 android:layout_marginHorizontal="70dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:text="Get OTP"
+                android:text="@string/get_otp"
                 android:textAllCaps="false"
                 android:padding="16dp"
                 android:backgroundTint="@color/green_primary"
